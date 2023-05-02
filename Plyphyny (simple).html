@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!-- #region --><!DOCTYPE html>
 <html>
   <head>
     <title>Eldritch 2nd Ed Character Sheet</title>
-    <link rel="stylesheet" type="text/css" href="Eldritch_2nd_Ed_css.css">
+    <link rel="stylesheet" type="text/css" href="Plyphyny (simple).css">
   </head>
   <body>
     <div class="character-info">
@@ -13,14 +13,18 @@
           <td><input type="text" name="name"></td>
         </tr>
         <tr>
+          <td>Player:</td>
+          <td><input type="text" name="player"></td>
+        </tr>
+        <tr>
           <td>Race:</td>
           <td>
-            <select name="race">
+            <select id="race" name="race">
               <option value="dwarf">Dwarf</option>
               <option value="elf">Elf</option>
               <option value="gnome">Gnome</option>
-              <option value="half-elf">Half-Elf</option>
-              <option value="half-orc">Half-Orc</option>
+              <option value="half-elf">Half-elf</option>
+              <option value="half-orc">Half-orc</option>
               <option value="halfling">Halfling</option>
               <option value="human">Human</option>
               <option value="drakkin">Drakkin (optional)</option>
@@ -30,7 +34,7 @@
         <tr>
           <td>Class:</td>
           <td>
-            <select name="class">
+            <select id="class" name="class">
               <option value="adept">Adept</option>
               <option value="assassin">Assassin</option>
               <option value="barbarian">Barbarian</option>
@@ -42,6 +46,13 @@
             </select>
           </td>
         </tr>
+      </table>
+    </div>
+  </body>
+</html>
+
+          <!-- Add the rest of the character info elements here -->
+        </div>
         <tr>
           <td>Level:</td>
           <td><input type="number" name="level" value="1" min="1"></td>
@@ -65,73 +76,195 @@
         </tr>
       </table>
     </div>
-<tr>
-  <tr>
-    <th>Competence</th>
-    <td>
-      <select name="competence-rank">
-        <option value="4">d4</option>
-        <option value="6">d6</option>
-        <option value="8">d8</option>
-        <option value="10">d10</option>
-        <option value="12">d12</option>
-      </select>
-    </td>
-    <td>
-      <select name="adroitness-specialization">
-        <option value="0"></option>
-        <option value="skulduggery">Skulduggery</option>
-        <option value="cleverness">Cleverness</option>
-      </select>
-    </td>
-    <td>
-      <select name="adroitness-specialization-rank">
-        <option value="0"></option>
-        <option value="1">+1</option>
-        <option value="2">+2</option>
-        <option value="3">+3</option>
-        <option value="4">+4</option>
-        <option value="5">+5</option>
-      </select>
-    </td>
-    <td>
-      <select name="expertise-specialization">
-        <option value="0"></option>
-        <option value="wizardry">Wizardry</option>
-        <option value="theurgy">Theurgy</option>
-      </select>
-    </td>
-    <td>
-      <select name="expertise-specialization-rank">
-        <option value="0"></option>
-        <option value="1">+1</option>
-        <option value="2">+2</option>
-        <option value="3">+3</option>
-        <option value="4">+4</option>
-        <option value="5">+5</option>
-      </select>
-    </td>
-    <td>
-      <select name="perception-specialization">
-        <option value="0"></option>
-        <option value="alertness">Alertness</option>
-        <option value="perspicacity">Perspicacity</option>
-      </select>
-    </td>
-    <td>
-      <select name="perception-specialization-rank">
-        <option value="0"></option>
-        <option value="1">+1</option>
-        <option value="2">+2</option>
-        <option value="3">+3</option>
-        <option value="4">+4</option>
-        <option value="5">+5</option>
-      </select>
-    </td>
-  </tr>
-  
-  
-
+    <hr> <!-- Separator -->
+    <div class="ability-container">
+      <div class="ability basic">
+        <span class="bold">Competence</span>
+        <select name="attr_Competence">
+          <option value="4">d4</option>
+          <option value="6">d6</option>
+          <option value="8">d8</option>
+          <option value="10">d10</option>
+          <option value="12">d12</option>
+        </select>
+      </div>
+      <!-- Add the remaining specializations and focus areas for Competence here -->
+      <div class="specializations">
+        → Adroitness
+        <select name="attr_Adroitness">
+          <option value="0">0</option>
+          <option value="4">d4</option>
+          <option value="6">d6</option>
+          <option value="8">d8</option>
+          <option value="10">d10</option>
+          <option value="12">d12</option>
+        </select>
+        <div class="focus">
+          Skullduggery
+          <select name="attr_Skullduggery">
+            <option value="0">0</option>
+            <option value="1">+1</option>
+            <option value="2">+2</option>
+            <option value="3">+3</option>
+            <option value="4">+4</option>
+            <option value="5">+5</option>
+          </select>
+        </div>
+        <div class="focus">
+          Cleverness
+          <select name="attr_Cleverness">
+            <option value="0">0</option>
+            <option value="1">+1</option>
+            <option value="2">+2</option>
+            <option value="3">+3</option>
+            <option value="4">+4</option>
+            <option value="5">+5</option>
+          </select>
+        </div>
+      </div>
+      <div class="specializations">
+        → Expertise
+        <select name="attr_Expertise">
+          <option value="0">0</option>
+          <option value="4">d4</option>
+          <option value="6">d6</option>
+          <option value="8">d8</option>
+          <option value="10">d10</option>
+          <option value="12">d12</option>
+        </select>
+        <div class="focus">
+          Wizardry
+          <select name="attr_Wizardry">
+            <option value="0">0</option>
+            <option value="1">+1</option>
+            <option value="2">+2</option>
+            <option value="3">+3</option>
+            <option value="4">+4</option>
+            <option value="5">+5</option>
+          </select>
+        </div>
+        <div class="focus">
+          Theurgy
+          <select name="attr_Theurgy">
+            <option value="0">0</option>
+            <option value="1">+1</option>
+            <option value="2">+2</option>
+            <option value="3">+3</option>
+            <option value="4">+4</option>
+            <option value="5">+5</option>
+          </select>
+        </div>
+      </div>
+      <div class="specializations">
+        → Perception
+        <select name="attr_Perception">
+          <option value="None">0</option>
+          <option value="d4">d4</option>
+          <option value="d6">d6</option>
+          <option value="d8">d8</option>
+          <option value="d10">d10</option>
+          <option value="d12">d12</option>
+        </select>
+        <div class="focus">
+          Alertness
+          <select name="attr_Alertness">
+            <option value="0">0</option>
+            <option value="+1">+1</option>
+            <option value="+2">+2</option>
+            <option value="+3">+3</option>
+            <option value="+4">+4</option>
+            <option value="+5">+5</option>
+          </select>
+        </div>
+        <div class="focus">
+          Perspicacity
+          <select name="attr_Perspicacity">
+            <option value="0">0</option>
+            <option value="+1">+1</option>
+            <option value="+2">+2</option>
+            <option value="+3">+3</option>
+            <option value="+4">+4</option>
+            <option value="+5">+5</option>
+          </select>
+        </div>
+    </div> <!-- Closing tag for the first "ability-container" div -->
+    <hr>
+    <div class="ability-container">
+      <div class="ability basic">
+        <span class="bold">Prowess</span>
+        <select name="attr_Prowess">
+          <option value="4">d4</option>
+          <option value="6">d6</option>
+          <option value="8">d8</option>
+          <option value="10">d10</option>
+          <option value="12">d12</option>
+        </select>
+      </div>
+      <div class="specializations">
+        → Agility
+        <select name="attr_Agility">
+          <option value="0">0</option>
+          <option value="4">d4</option>
+          <option value="6">d6</option>
+          <option value="8">d8</option>
+          <option value="10">d10</option>
+          <option value="12">d12</option>
+        </select>
+            <div class="focus">
+            Speed
+            <select name="attr_Speed">
+              <option value="0">0</option>
+              <option value="1">+1</option>
+              <option value="2">+2</option>
+              <option value="3">+3</option>
+              <option value="4">+4</option>
+              <option value="5">+5</option>
+            </select>
+          </div>
+          <div class="focus">
+            Reaction
+            <select name="attr_Reaction">
+              <option value="0">0</option>
+              <option value="1">+1</option>
+              <option value="2">+2</option>
+              <option value="3">+3</option>
+              <option value="4">+4</option>
+              <option value="5">+5</option>
+            </select>
+          </div>
+          <div class="specializations">
+            → Melee
+            <select name="attr_Melee">
+              <option value="0">0</option>
+              <option value="4">d4</option>
+              <option value="6">d6</option>
+              <option value="8">d8</option>
+              <option value="10">d10</option>
+              <option value="12">d12</option>
+            </select>
+                <div class="focus">
+                Threat
+                <select name="attr_Threat">
+                  <option value="0">0</option>
+                  <option value="1">+1</option>
+                  <option value="2">+2</option>
+                  <option value="3">+3</option>
+                  <option value="4">+4</option>
+                  <option value="5">+5</option>
+                </select>
+              </div>
+              <div class="focus">
+                Finesse
+                <select name="attr_Finesse">
+                  <option value="0">0</option>
+                  <option value="1">+1</option>
+                  <option value="2">+2</option>
+                  <option value="3">+3</option>
+                  <option value="4">+4</option>
+                  <option value="5">+5</option>
+                </select>
+              </div>
+          </div>
     <div class="defense">
       <!-- Active and Passive Defense Pools, Spirit Points -->
     </div>
